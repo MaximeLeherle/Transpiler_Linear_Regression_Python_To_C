@@ -29,4 +29,4 @@ For the python script there are 2 options:
     --filename <str> : to use the str file, it must be a .joblib
     --out <str> name of the outfile, that is to be in .c, and prediction.c
 
-For the c file just compile with '''gcc *.c''' and run the code with '''/a.out'''
+For the c file just compile with `__gcc *.c__` and run the code with `__/a.out__`

@@ -28,12 +28,17 @@ for elem in sys.argv:
     elif (next_is_filename == True):
         filename = elem
     elif (elem == "--out"):
-        next_is_filename = True
+        next_out_filename = True
     elif (next_out_filename == True):
         out_filename = elem
 
 if (filename[-7:] != ".joblib"):
-    print("Erreur in the filename you have to use a .joblib file.")
+    print("Error in the filename you have to use a .joblib file.")
+    filename = "california.joblib"
+    
+if (out_filename[-2:] != c):
+    print("Error in the out filename you have to use a .c filename.")
+    out_filename = "prediction.c"
 
 if (filename == "california.joblib"):
     

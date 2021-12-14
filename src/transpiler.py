@@ -16,21 +16,25 @@ from sklearn.model_selection import train_test_split
 
 # Setup
 
+Model = None
+
 out_filename = "prediction.c"
 next_out_filename = False
 filename = "california.joblib"
-Model = None
 next_is_filename = False
+
 for elem in sys.argv:
 
     if (elem == "--filename"):
         next_is_filename = True
     elif (next_is_filename == True):
         filename = elem
+        next_is_filename = False
     elif (elem == "--out"):
         next_out_filename = True
     elif (next_out_filename == True):
         out_filename = elem
+        next_out_filename = False
 
 print("\n\n\n\n\nWe have : ", filename[-7:], "\n\n\n\n") 
 if (filename[-7:] != ".joblib"):

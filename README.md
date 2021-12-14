@@ -31,3 +31,9 @@ For the python script there are 2 options:
     --out <str> name of the outfile, that is to be in .c, and prediction.c
 
 For the c file just compile with `gcc *.c` and run the code with `/a.out`
+
+## Result
+
+When we use the `./test` we see that the result from python file and the result from c file are aproximately __1.95__.
+We have small differences which are due to the fact that we have approximated the values in the c code.
+But otherwise the results are very close so we can say that our pass in c is successful.

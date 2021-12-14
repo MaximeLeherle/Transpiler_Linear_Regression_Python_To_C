@@ -12,6 +12,7 @@ We have the file `src/transpiler.py`.
 This is the main file it will load the model and create the .c file.
 
 There are 3 possibilities :
+
     - Either a file is specified and so we will load this file and use it for the c code
     - Or no file is specified and in this case we use the file of california of skleran. We create it and save it then we use it for the c code
     - And if the file california.joblib is already existing and no file is specified then we load it and use it.

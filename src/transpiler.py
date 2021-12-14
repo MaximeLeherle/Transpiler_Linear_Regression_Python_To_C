@@ -110,7 +110,7 @@ code_c += "\tfloat result = 0.0;\n\t" + \
         "\n\t}\n\treturn result + " + str(round(Model.intercept_, 5)) + ";\n}\n\n" + \
         "int main(void)\n" + \
         "{\n" + \
-        "\tfloat feature["  + str(len(Model.coef_)) + "] = {5060.0, 3.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35};\n\n" + \
+        "\tfloat feature["  + str(len(Model.coef_)) + "] = {3.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35};\n\n" + \
         "\tprintf(\"The result is : \%f\\n\", prediction(feature, 8));\n\n}\n"
 
 out_filename = "prediction.c"

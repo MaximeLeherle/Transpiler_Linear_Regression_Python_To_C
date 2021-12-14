@@ -36,7 +36,7 @@ if (filename[-7:] != ".joblib"):
     print("Error in the filename you have to use a .joblib file.")
     filename = "california.joblib"
     
-if (out_filename[-2:] != "c"):
+if (out_filename[-2:] != ".c"):
     print("Error in the out filename you have to use a .c filename.")
     out_filename = "prediction.c"
 

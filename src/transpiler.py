@@ -64,7 +64,7 @@ if (filename == "california.joblib"):
         print("\n\n\nWe can nox save the model.")
         joblib.dump(Model, filename)
         
-        print("\n\nThe result for the test [5060.0, 3.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35] is : ", Model.predict([[5060.0, 3.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35]]))
+        print("\n\nThe result for the test [3.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35] is : ", Model.predict([[53.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35]]))
 
     else:
 
@@ -80,7 +80,7 @@ if (filename == "california.joblib"):
         X_train, X_test, Y_train, Y_test = train_test_split(df,
                 california.target, test_size = 0.001, random_state=5)
 
-        print("\n\nThe result for the test [5060.0, 3.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35] is : ", Model.predict([[5060.0, 3.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35]]))
+        print("\n\nThe result for the test [3.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35] is : ", Model.predict([[3.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35]]))
 else:
         Model = joblib.load(filename)
 

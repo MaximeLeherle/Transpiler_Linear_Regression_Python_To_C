@@ -8,17 +8,17 @@ The goal is to have a python file that can take a linear regression model in a .
 
 ### Python
 
-We have the file src/transpiler.py.
+We have the file `src/transpiler.py`.
 This is the main file it will load the model and create the .c file.
 
 There are 3 possibilities :
-    -    - Either a file is specified and so we will load this file and use it for the c code
+    - Either a file is specified and so we will load this file and use it for the c code
     - Or no file is specified and in this case we use the file of california of skleran. We create it and save it then we use it for the c code
     - And if the file california.joblib is already existing and no file is specified then we load it and use it.
 
 ### Sh
 
-The test.sh file is there to launch the python script without argument so on the california.joblib file and then it will launch the C file created.
+The `test.sh` file is there to launch the python script without argument so on the `california.joblib` file and then it will launch the C file created.
 
 ## Use
 

@@ -30,9 +30,13 @@ if (filename[-7:] != ".joblib"):
     print("Erreur in the filename you have to use a .joblib file.")
 
 if (filename == "california.joblib"):
+    
+    print("You want to use the california.joblib")
 
     # Create the model for boston
     if (not os.path.isfile(filename)):
+        
+        print("The .joblib don't exist so we will create the model and save it.")
 
         california = datasets.fetch_california_housing()
 
@@ -47,6 +51,8 @@ if (filename == "california.joblib"):
         y_train_predict = Model.predict(X_train)
         rmse = (np.sqrt(mean_squared_error(Y_train, y_train_predict)))
         r2 = r2_score(Y_train, y_train_predict)
+        
+        print("\n\n\nWe have the following Result for the model :")
         print("Train RMSE : ", rmse, " and R2 : ", r2, ".")
 
         y_test_predict = Model.predict(X_test)
@@ -55,10 +61,13 @@ if (filename == "california.joblib"):
         print("Test RMSE : ", rmse, " and R2 : ", r2, ".")
 
 
+        print("\n\n\nWe can nox save the model.")
         joblib.dump(Model, filename)
 
     else:
 
+        print("The .joblib exist so we just will load and use it.")
+        
         Model = joblib.load(filename)
 
 
@@ -70,11 +79,11 @@ if (filename == "california.joblib"):
                 california.target, test_size = 0.001, random_state=5)
 
         print(Model.predict(X_test))
-        print("The result : ", Model.predict([[0.1, 0.1, 0.1, 0.1,0.1, 0.1, 0.1, 0.1]]))
+        print("\n\nThe result for the test [5060.0, 3.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35] is : ", Model.predict([[5060.0, 3.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35]]))
 else:
         Model = joblib.load(filename)
 
-print("So we have load the model : ", filename)
+print("\n\n\nSo we have load the model : ", filename)
 print("\nAnd the coefficients of the model are : ", Model.coef_)
 print("And the intercept is : ", Model.intercept_)
 
@@ -100,7 +109,7 @@ code_c += "\tfloat result = 0.0;\n\t" + \
         "\n\t}\n\treturn result + " + str(round(Model.intercept_, 5)) + ";\n}\n\n" + \
         "int main(void)\n" + \
         "{\n" + \
-        "\tfloat feature["  + str(len(Model.coef_)) + "] = {0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1};\n\n" + \
+        "\tfloat feature["  + str(len(Model.coef_)) + "] = {5060.0, 3.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35};\n\n" + \
         "\tprintf(\"The result is : \%f\\n\", prediction(feature, 8));\n\n}\n"
 
 out_filename = "prediction.c"

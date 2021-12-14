@@ -36,7 +36,6 @@ for elem in sys.argv:
         out_filename = elem
         next_out_filename = False
 
-print("\n\n\n\n\nWe have : ", filename[-7:], "\n\n\n\n") 
 if (filename[-7:] != ".joblib"):
     print("Error in the filename you have to use a .joblib file.")
     filename = "california.joblib"

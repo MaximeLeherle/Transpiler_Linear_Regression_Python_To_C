@@ -16,6 +16,8 @@ from sklearn.model_selection import train_test_split
 
 # Setup
 
+out_filename = "prediction.c"
+next_out_filename = False
 filename = "california.joblib"
 Model = None
 next_is_filename = False
@@ -25,6 +27,10 @@ for elem in sys.argv:
         next_is_filename = True
     elif (next_is_filename == True):
         filename = elem
+    elif (elem == "--out"):
+        next_is_filename = True
+    elif (next_out_filename == True):
+        out_filename = elem
 
 if (filename[-7:] != ".joblib"):
     print("Erreur in the filename you have to use a .joblib file.")
@@ -113,7 +119,7 @@ code_c += "\tfloat result = 0.0;\n\t" + \
         "\tfloat feature["  + str(len(Model.coef_)) + "] = {3.25, 28.0, 5.5, 1.11, 1162.0, 2.08, 34.00, -118.35};\n\n" + \
         "\tprintf(\"The result is : \%f\\n\", prediction(feature, 8));\n\n}\n"
 
-out_filename = "prediction.c"
+
 
 with open(out_filename, "w") as f:
         f.write(code_c)
